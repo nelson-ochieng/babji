@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity=
+    "sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <title>MY LOCATION</title>
+  </head>
+
+  <body>
+    <header class="header">
+     <h3>KISUMU</h3>
+     
+     <style>
+
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.a:hover {
+  background-color: RED;
+}
+
+.button1 {background-color: #4CAF50;} 
+.button2 {background-color: #008CBA;} 
+.button3 {background-color: #E53343;}
+</style>  
+    .header{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+     </style>
+    </header>
+    <h4 class="header">OPENSTREET BASE MAP</h4>
+    <div id="map" style="width: 100%; height: 500px"></div>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity=
+"sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map')
+      
+        // Get the tile layer from OpenStreetMaps
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      
+        // Specify the maximum zoom of the map
+        maxZoom: 19,
+      
+        // Set the attribution for OpenStreetMaps
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      
+        // Set the view of the map
+        // with the latitude, longitude and the zoom value
+        // map.setView([-0.0666664 35.0499998] , 16);
+        map.setView([ -0.091702, 34.767956] , 16);
+        //  -0.091702   34.767956
+          
+        // Set the map view to the user's location
+        // Uncomment below to set map according to user location
+        // map.locate({setView: true, maxZoom: 16});
+      
+        // Show a market at the position of the Eiffel Tower
+        let eiffelMarker = L.marker([ -0.091702, 34.767956]).addTo(map);
+      
+        // Bind popup to the marker with a popup
+        eiffelMarker.bindPopup("KIBIGORI SUB-LOCATION").openPopup();
+    </script>
+    <section class="footer">
+    
+      <style>
+      .footer{
+          
+          background-color: rgb(100,250,250);
+          min-height: 35vh; padding: 10px;
+  
+
+      }
+     
+      </style>
+      
+     <div class="footer_section">
+     <style>
+      .footer_section{
+          display: flex;
+          flex-direction: row;
+          row-gap: 4rem;
+          color: BLACK;
+    font-family: fantasy;
+          list-style: none;
+          margin-top: 2.rem;
+      }
+     </style>
+       <li class="Developer">Developer
+        <ul style="color: rgb(233, 165, 165); ;">OCHIENG NELSON</ul>
+        
+       </li>
+       <li  style="margin-left: 30% ;" class="author">AUTHOR
+        <ul style="color:rgb(0, 255, 0);">OCHIENG NELSON</ul>
+    </li>
+       
+		<ul style="color: rgb(0, 255, 0);">&copy; &#127757; ENC22-0159/2019</ul>
+    </li>
+        </div>
+    </div>
+  
+
+    </section>
+
+    <!--<script>
+    const button = document.getElementById("myButtonID");
+    const myModal = document.getElementById("myModal");
+    button.addEventListener("mouseenter", (event) => {
+        alert("Welcome to")
+    }, false);
+
+
+</script>-->
+  </body>
+</html>
